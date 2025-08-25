@@ -1,0 +1,69 @@
+# Mini Game: Kéo Búa Bao
+
+## Giới thiệu
+Đây là dự án mini-game "Kéo Búa Bao" gồm hai phần: **server** và **client**. Người chơi có thể tham gia qua giao diện đồ họa Tkinter hoặc dòng lệnh. Game hỗ trợ chơi 2 người qua mạng LAN hoặc trên cùng máy.
+
+---
+
+## Cách sử dụng
+
+### 1. Chuẩn bị
+- Cài đặt Python 3.x
+- Cài đặt thư viện Pillow (dùng cho giao diện ảnh):
+  ```
+  pip install requiment.txt 
+  ```
+- Đặt các file ảnh `keo.png`, `bua.png`, `bao.png` vào thư mục `Keo-bua-bao`.
+
+### 2. Chạy server
+Mở terminal, chuyển đến thư mục dự án và chạy:
+```
+python server.py
+```
+Server sẽ lắng nghe kết nối từ các client.
+
+### 3. Chạy client giao diện
+Mỗi người chơi mở một terminal mới và chạy:
+```
+python client_gui.py
+```
+Chọn "kéo", "búa", hoặc "bao" bằng cách nhấn vào hình ảnh, sau đó nhấn "Gửi lựa chọn" để nhận kết quả.
+
+### 4. Thoát server
+Gõ `exit` trong terminal đang chạy server để dừng server.
+
+---
+
+## Các kỹ thuật lập trình đã sử dụng
+
+- **Socket Programming:**  
+  Sử dụng thư viện `socket` để tạo kết nối TCP giữa server và client.
+
+- **Đa luồng (Threading):**  
+  Server sử dụng `threading.Thread` để xử lý nhiều phòng chơi cùng lúc và lắng nghe lệnh thoát.
+
+- **Giao diện đồ họa (Tkinter):**  
+  Client sử dụng Tkinter để tạo giao diện người dùng, cho phép chọn lựa bằng hình ảnh.
+
+- **Xử lý hình ảnh (Pillow):**  
+  Sử dụng Pillow để hiển thị ảnh kéo, búa, bao trong giao diện.
+
+- **Quản lý phòng chơi:**  
+  Server quản lý các phòng chơi bằng biến `rooms`, mỗi phòng gồm 2 người chơi.
+
+- **Xử lý ngoại lệ:**  
+  Bắt và xử lý lỗi kết nối, lỗi gửi/nhận dữ liệu để đảm bảo chương trình không bị crash.
+
+---
+
+## Tác giả
+- Người phát triển: Đặng Quốc Huy
+- Email:quochuyhuy38@gmail.com
+
+---
+
+## Ghi chú
+- Có thể mở nhiều client để chơi nhiều ván liên tiếp.
+- Nếu muốn chơi qua dòng lệnh, dùng
+
+Link: github: https://github.com/wuy-github/mini-game 
